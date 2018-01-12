@@ -63,7 +63,16 @@ RUN mkdir /tmp/android \
 
 # END ANDROID STUFF
 
-# CLEAN CACHE
-RUN rm -rf /var/lib/apt/lists/*
+###################
+# CLEAN UP
+RUN apt-get clean autoclean \
+    && apt-get autoremove -y \
+    && rm -rf \
+        /var/lib/apt/lists/* \
+        /tmp/* \
+        /var/tmp/* \
+        /var/lib/dpkg/* \
+        /var/lib/cache/* \
+        /var/lib/log/*
 
 CMD ["/bin/bash"]
