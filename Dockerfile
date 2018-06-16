@@ -2,7 +2,7 @@ FROM bitspree/qt-builder
 
 LABEL authors="garaone@co3.de"
 
-ENV QT=5.10.0
+ENV QT=5.9.6
 
 ENV QT_ARCH ${QT_PATH}/${QT}/android_armv7
 ENV ANDROID_HOME /opt/android-sdk-linux
@@ -17,9 +17,10 @@ ENV ANDROID_NDK_TOOLS_PREFIX ${ANDROID_NDK_TOOLCHAIN_PREFIX}
 ENV QMAKESPEC android-g++
 ENV PATH=${PATH}:${QT_ARCH}/bin:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
+
 RUN apt-get update -q && \
     apt-get install -q -y --no-install-recommends \
-        default-jdk \
+        openjdk-8-jdk \
         expect \
         unzip \
     && apt-get clean \
