@@ -2,7 +2,7 @@ FROM bitspree/qt-builder
 
 LABEL authors="garaone@co3.de"
 
-ENV QT=5.9.6
+ENV QT=5.11.1
 
 ENV QT_ARCH ${QT_PATH}/${QT}/android_armv7
 ENV ANDROID_HOME /opt/android-sdk-linux
@@ -67,13 +67,13 @@ RUN mkdir /tmp/android \
 ###################
 # CLEAN UP
 RUN apt-get clean autoclean \
-    && apt-get autoremove -y
-    # && rm -rf \
-    #     /var/lib/apt/lists/* \
-    #     /tmp/* \
-    #     /var/tmp/* \
-    #     /var/lib/dpkg/* \
-    #     /var/lib/cache/* \
-    #     /var/lib/log/*
+    && apt-get autoremove -y \
+    && rm -rf \
+        /var/lib/apt/lists/* \
+        /tmp/* \
+        /var/tmp/* \
+        /var/lib/dpkg/* \
+        /var/lib/cache/* \
+        /var/lib/log/*
 
 CMD ["/bin/bash"]
