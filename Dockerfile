@@ -2,7 +2,7 @@ FROM bitspree/qt-builder
 
 LABEL authors="garaone@co3.de"
 
-ENV QT=5.11.1
+ENV QT=5.11.2
 
 ENV QT_ARCH ${QT_PATH}/${QT}/android_armv7
 ENV ANDROID_HOME /opt/android-sdk-linux
