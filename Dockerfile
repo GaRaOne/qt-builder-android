@@ -18,11 +18,11 @@ ENV QMAKESPEC android-g++
 ENV PATH=${PATH}:${QT_ARCH}/bin:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
 
-ADD ./sdk-tools-linux-4333796.zip /${ANDROID_SDK_ROOT}/sdk.zip
-# ADD https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip /${ANDROID_SDK_ROOT}/sdk.zip
+# ADD ./sdk-tools-linux-4333796.zip /${ANDROID_SDK_ROOT}/sdk.zip
+ADD https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip /${ANDROID_SDK_ROOT}/sdk.zip
 
-ADD ./android-ndk-r18b-linux-x86_64.zip /tmp/android/ndk.zip
-# ADD https://dl.google.com/android/repository/android-ndk-r18b-linux-x86_64.zip /tmp/android/ndk.zip
+# ADD ./android-ndk-r18b-linux-x86_64.zip /tmp/android/ndk.zip
+ADD https://dl.google.com/android/repository/android-ndk-r18b-linux-x86_64.zip /tmp/android/ndk.zip
 
 RUN apt-get update -q && \
     apt-get install -q -y --no-install-recommends \
