@@ -4,5 +4,3 @@ services:
   qt:
     build: 
       context: .
-    # volumes:
-    #   - confluenceapp:/opt/atlassian/confluence
